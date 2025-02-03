@@ -1,0 +1,144 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Wireless Bluetooth Headphones",
+        "price": 79.99,
+        "description": "Noise-cancelling wireless Bluetooth headphones with long battery life.",
+        "image": "https://images.pexels.com/photos/10292805/pexels-photo-10292805.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 2,
+        "name": "Smart Watch",
+        "price": 149.99,
+        "description": "A stylish smartwatch with fitness tracking and notifications.",
+        "image": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 3,
+        "name": "Portable Speaker",
+        "price": 59.99,
+        "description": "Compact Bluetooth speaker with great sound quality.",
+        "image": "https://images.pexels.com/photos/9072408/pexels-photo-9072408.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 4,
+        "name": "4K Smart TV",
+        "price": 599.99,
+        "description": "A 55-inch 4K UHD smart television with voice control.",
+        "image": "https://images.pexels.com/photos/8089670/pexels-photo-8089670.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 5,
+        "name": "Laptop Sleeve",
+        "price": 19.99,
+        "description": "Protective laptop sleeve for 13-inch MacBook and other laptops.",
+        "image": "https://images.pexels.com/photos/12444595/pexels-photo-12444595.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 6,
+        "name": "Bamboo Toothbrush",
+        "price": 29.99,
+        "description": "Rechargeable electric toothbrush with multiple settings.",
+        "image": "https://images.pexels.com/photos/6187566/pexels-photo-6187566.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 7,
+        "name": "Yoga Mat",
+        "price": 24.99,
+        "description": "Non-slip yoga mat with extra cushioning for comfort.",
+        "image": "https://cdn.pixabay.com/photo/2021/10/03/04/23/yoga-mats-6676903_640.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Coffee Maker",
+        "price": 49.99,
+        "description": "12-cup drip coffee maker with programmable settings.",
+        "image": "https://images.pexels.com/photos/6032786/pexels-photo-6032786.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 9,
+        "name": "Backpack",
+        "price": 39.99,
+        "description": "Durable backpack with multiple compartments for organization.",
+        "image": "https://cdn.pixabay.com/photo/2016/11/19/14/56/backpack-1839705_1280.jpg"
+      },
+      {
+        "id": 10,
+        "name": "Wireless Mouse",
+        "price": 15.99,
+        "description": "Ergonomic wireless mouse for comfortable use.",
+        "image": "https://images.pexels.com/photos/28842073/pexels-photo-28842073/free-photo-of-high-tech-gaming-mouse-and-keyboard-setup.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 11,
+        "name": "Desk Lamp",
+        "price": 22.99,
+        "description": "Adjustable LED desk lamp with multiple brightness levels.",
+        "image": "https://images.pexels.com/photos/2168382/pexels-photo-2168382.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 12,
+        "name": "Gaming Keyboard",
+        "price": 69.99,
+        "description": "RGB backlit mechanical keyboard with customizable keys.",
+        "image": "https://images.pexels.com/photos/7915219/pexels-photo-7915219.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 13,
+        "name": "Smartphone",
+        "price": 499.99,
+        "description": "Latest model smartphone with a high-resolution camera.",
+        "image": "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 14,
+        "name": "Cordless Drill",
+        "price": 89.99,
+        "description": "Powerful cordless drill with multiple speed settings.",
+        "image": "https://cdn.pixabay.com/photo/2020/05/26/07/05/screwdriver-5221750_640.jpg"
+      },
+      {
+        "id": 15,
+        "name": "Air Fryer",
+        "price": 99.99,
+        "description": "Healthy cooking with the air fryer, perfect for frying, baking, grilling, and roasting.",
+        "image": "https://media.istockphoto.com/id/1647237141/photo/hand-cooking-whole-roasted-chicken-with-garnish-in-air-fryer-at-the-kitchen-top-view.jpg?b=1&s=612x612&w=0&k=20&c=m57g8L3j0spaUG_2qVoluk4QggxbHBe-xyUuLDNjB5E="
+      },
+      {
+        "id": 16,
+        "name": "Smart Light Bulb",
+        "price": 19.99,
+        "description": "Wi-Fi enabled smart light bulb with color-changing capabilities.",
+        "image": "https://images.pexels.com/photos/22491144/pexels-photo-22491144/free-photo-of-smart-home-devices.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 17,
+        "name": "Camera Tripod",
+        "price": 29.99,
+        "description": "Adjustable camera tripod with universal mounting for smartphones and cameras.",
+        "image": "https://images.pexels.com/photos/2268385/pexels-photo-2268385.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 18,
+        "name": "Bluetooth Earbuds",
+        "price": 39.99,
+        "description": "Compact and sweat-resistant Bluetooth earbuds with excellent sound quality.",
+        "image": "https://images.pexels.com/photos/3585797/pexels-photo-3585797.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 19,
+        "name": "Laptop Stand",
+        "price": 18.99,
+        "description": "Portable and adjustable laptop stand for comfortable viewing.",
+        "image": "https://images.pexels.com/photos/26891720/pexels-photo-26891720/free-photo-of-home-office-studio-equipment.jpeg?auto=compress&cs=tinysrgb&w=600"
+      },
+      {
+        "id": 20,
+        "name": "Water Bottle",
+        "price": 14.99,
+        "description": "Insulated stainless steel water bottle with leak-proof lid.",
+        "image": "https://images.pexels.com/photos/8032837/pexels-photo-8032837.jpeg?auto=compress&cs=tinysrgb&w=600"
+      }
+    ]
+  }

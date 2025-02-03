@@ -1,0 +1,51 @@
+/* Make the navbar stay at the top of the page */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; /* Space between links and button */
+  align-items: center; /* Center content vertically */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Navigation links container */
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+/* Individual navigation link */
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navLink:hover {
+  text-decoration: none;
+}
+
+/* Logout button */
+.logoutButton {
+  padding: 5px 10px;
+  background-color: #f44335;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  width: 70px;
+}
+
+.logoutButton:hover {
+  background-color: red;
+}
+
+.test {
+  background-color: aqua;
+}

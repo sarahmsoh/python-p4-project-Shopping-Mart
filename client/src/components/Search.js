@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function SearchProducts() {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
 
   const handleSearch = () => {
-    fetch(`/api/products?search=${searchTerm}`)
-      .then(res => {
-        console.log('Response:', res);
-        return res.json();
-      })
-      .then(data => {
+    axios
+    .get(`http://127.0.0.1:5000/search?name=${searchTerm}`)
+    .then(data => {
         console.log('Data:', data);
         if (data) {
           setResults(data);

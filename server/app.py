@@ -25,7 +25,7 @@ api = Api(app)
 # Database Models
 
 # Product Model
-class Product(db.Model, SerializerMixin):
+class Products(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(200), nullable=False)
@@ -33,10 +33,10 @@ class Product(db.Model, SerializerMixin):
     price = db.Column(db.Float, nullable=False)
 
     # One-to-many relationship with Review
-    reviews = db.relationship('Review', back_populates='product', cascade='all, delete-orphan')
+    reviews = db.relationship('Review', back_populates='products', cascade='all, delete-orphan')
 
     # One-to-many relationship with Order
-    orders = db.relationship('Order', back_populates='product', cascade='all, delete-orphan')
+    orders = db.relationship('Order', back_populates='products', cascade='all, delete-orphan')
 
     def __init__(self, name, description, price, image):
         self.name = name
@@ -48,16 +48,16 @@ class Product(db.Model, SerializerMixin):
 class Order(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
+    products_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
 
     # Relationships
-    product = db.relationship('Product', back_populates='orders')
+    products = db.relationship('Products', back_populates='orders')
     user = db.relationship('User', back_populates='orders')
 
-    def __init__(self, user_id, product_id, quantity):
+    def __init__(self, user_id, products_id, quantity):
         self.user_id = user_id
-        self.product_id = product_id
+        self.products_id = products_id
         self.quantity = quantity
 
 
@@ -66,17 +66,17 @@ class Review(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     rating = db.Column(db.Integer, nullable=False)
     content = db.Column(db.String(500), nullable=False)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
+    products_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     # Relationships
-    product = db.relationship('Product', back_populates='reviews', single_parent=True, cascade='all, delete-orphan')
+    products = db.relationship('Products', back_populates='reviews', single_parent=True, cascade='all, delete-orphan')
     user = db.relationship('User', back_populates='reviews', single_parent=True, cascade='all, delete-orphan')
 
     def __init__(self, rating, content, product_id, user_id):
         self.rating = rating
         self.content = content
-        self.product_id = product_id
+        self.products_id = product_id
         self.user_id = user_id
 
 # User Model
@@ -85,7 +85,7 @@ class User(db.Model, SerializerMixin):
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
     password = db.Column(db.String(100), nullable=False)
-    
+
 
     # Relationships
     reviews = db.relationship('Review', back_populates='user', cascade='all, delete-orphan')
@@ -98,7 +98,7 @@ class User(db.Model, SerializerMixin):
 
 # Schemas (Using Marshmallow for JSON serialization)
 # class ProductSchema(ma.Schema):
-class ProductSchema(Schema):
+class ProductsSchema(Schema):
     _id = fields.Str(required=True)
     name = fields.Str(required=True)
     description = fields.Str()
@@ -168,31 +168,31 @@ def create_user():
 
 @app.route('/products', methods=['GET'])
 def get_products():
-    products = Product.query.all()
-    Schema = ProductSchema(many=True)
+    products = Products.query.all()
+    Schema = ProductsSchema(many=True)
     data = Schema.dump(products)
     return jsonify(data), 200
 
 @app.route('/products/<int:product_id>', methods=['GET'])
 def get_product(product_id):
-    product = Product.query.filter_by(id=product_id).first()
+    product = Products.query.filter_by(id=product_id).first()
     if not product:
         return jsonify({'message': 'Product not found'}), 404
-    Schema = ProductSchema()
+    Schema = ProductsSchema()
     data = Schema.dump(product)
     return jsonify(data), 200
 
 @app.route('/products', methods=['POST'])
 def create_product():
     data = request.get_json()
-    product = Product(name=data['name'], description=data['description'], image=data['image'], price=data['price'])
+    product = Products(name=data['name'], description=data['description'], image=data['image'], price=data['price'])
     db.session.add(product)
     db.session.commit()
     return jsonify({'message': 'Product created successfully'}), 201
 
 @app.route('/products/<int:product_id>', methods=['DELETE'])
 def delete_product(product_id):
-    product = Product.query.filter_by(id=product_id).first()
+    product = Products.query.filter_by(id=product_id).first()
     if not product:
         return jsonify({'message': 'Product not found'}), 404
     db.session.delete(product)
@@ -202,12 +202,12 @@ def delete_product(product_id):
 @app.route('/create_order', methods=['POST'])
 def create_order():
     data = request.get_json()
-    product_id = data['product_id']
+    products_id = data['products_id']
     quantity = data['quantity']
     user_id = data['user_id']  # Make sure to get user_id as well
 
     # Create order
-    new_order = Order(product_id=product_id, quantity=quantity, user_id=user_id)
+    new_order = Order(products_id=products_id, quantity=quantity, user_id=user_id)
     db.session.add(new_order)
     db.session.commit()
     return jsonify({'message': 'Order created successfully'}), 201
@@ -224,7 +224,7 @@ def delete_order():
 @app.route('/reviews', methods=['POST'])
 def create_review():
     data = request.get_json()
-    review = Review(rating=data['rating'], content=data['content'], product_id=data['product_id'], user_id=data['user_id'])
+    review = Review(rating=data['rating'], content=data['content'], products_id=data['products_id'], user_id=data['user_id'])
     db.session.add(review)
     db.session.commit()
     return jsonify(review.to_dict()), 201

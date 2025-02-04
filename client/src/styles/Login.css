@@ -1,50 +1,50 @@
 .login {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-  }
-  /* Style for the <p> tag in the login form */
-  p {
-    font-size: 16px;
-    color: #0b8877; /* Dark gray color */
-    text-align: center;
-    margin-top: 20px;
-    font-family: 'Arial', sans-serif;
-  }
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+/* Style for the <p> tag in the login form */
+p {
+  font-size: 16px;
+  color: #0b8877; /* Dark gray color */
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+}
 
-  .loginForm {
-    display: flex;
-    flex-direction: column;
-  }
-  .formGroup {
-    margin-bottom: 15px;
-  }
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+.formGroup {
+  margin-bottom: 15px;
+}
 
-  .label {
-    display: block;
-    margin-bottom: 5px;
-  }
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
 
-  .input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-  .loginButton {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+.loginButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  .loginButton:hover {
-    background-color: aqua;
-  }
+.loginButton:hover {
+  background-color: aqua;
+}

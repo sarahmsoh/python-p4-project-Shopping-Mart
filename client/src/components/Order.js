@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 const OrderForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', productId: '', quantity: 1 });
@@ -7,13 +8,9 @@ const OrderForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('/http://127.0.0.1:5000/order', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
+    axios
+    .post('http://127.0.0.1:5000/orders', formData)
+
     .then(response => response.json())
     .then(data => {
       console.log(data);

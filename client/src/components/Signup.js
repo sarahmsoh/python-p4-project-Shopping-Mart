@@ -1,26 +1,12 @@
 import React, { useState } from 'react';
-import '../styles/Signup.css'; // Assuming you're using a custom CSS file
-import { Link } from 'react-router-dom'; // For navigation
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import '../styles/Signup.css';
+import { Link } from 'react-router-dom';
 
-const Signup = () => {
+function Signup() {
   const [name, setname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-    // const handleSubmit = async (e) => {
-    // e.preventDefault();    // setError('');  // Reset error on submit
-
-    // Basic client-side validation
-    // if (!name || !email || !password || !confirmPassword) {
-    //   setError('Please fill in all fields.');
-    //   return;
-    // }
-
-    // if (password !== confirmPassword) {
-    //   setError('Passwords do not match');
-    //   return;
-    // }
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -42,7 +28,7 @@ const Signup = () => {
       <h1>Signup</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Username:</label>
+          <label>Name:</label>
           <input
             type="text"
             value={name}
@@ -78,26 +64,7 @@ const Signup = () => {
           </button>
         </div>
 
-        {/* <div className="form-group relative">
-          <label>Confirm Password:</label>
-          <input
-            type={confirmPasswordShown ? 'text' : 'password'}
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-          <button
-            type="button"
-            className="password-toggle"
-            onClick={() => setConfirmPasswordShown(!confirmPasswordShown)}
-          >
-            {confirmPasswordShown ? 'Hide' : 'Show'}
-          </button>
-        </div>
-
-        {error && <p style={{ color: 'red' }}>{error}</p>} */}
-
-        <button type="submit"  onClick={handleSubmit} >Signup</button>
+        <button type="submit">Signup</button>
       </form>
 
       <p>

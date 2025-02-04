@@ -60,7 +60,9 @@ function Navbar() {
         <li>
           <Link to="/login">Login</Link>
         </li>
-      
+        <li>
+          <Link to="/products">Product</Link>
+        </li>
         <li>
           <Link to="/newproduct">New Product</Link>
         </li>

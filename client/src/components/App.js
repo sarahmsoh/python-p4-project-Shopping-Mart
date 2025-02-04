@@ -16,7 +16,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
-      
+        <Home />
         <ProductList />
         <Switch>
           {/* Default route (Home page) */}

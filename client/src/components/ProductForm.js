@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import '../styles/ProductForm.css';
+import axios from 'axios';
 
 function ProductForm() {
   const [product, setProduct] = useState({
     name: '',
     description: '',
     price: 0,
-    quantity: 0,
+    image: '',  // Added image field
   });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Product added:', product);
-    // Add product to database or API here
+    axios.post('http://127.0.0.1:5000/products', product)
+      .then(response => {
+        console.log('Product added:', product);
+      })
+      .catch(err => console.log(err)); // Added error handling
   };
 
   const handleChange = (event) => {
@@ -39,8 +43,8 @@ function ProductForm() {
       </label>
       <br />
       <label>
-        Quantity:
-        <input type="number" name="quantity" value={product.quantity} onChange={handleChange} />
+        image URL:
+        <input type="text" name="image" value={product.image} onChange={handleChange} />
       </label>
       <br />
       <button type="submit">Add Product</button>
